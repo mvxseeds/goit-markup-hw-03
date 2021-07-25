@@ -5,7 +5,7 @@
   --lighter: #ffffff;
   --footer-links-lighter: rgba(255, 255, 255, 0.6);
   --bg-dark: #2f303a;
-  --bg-secondary-btn: #f5f4fa;
+  --bg-secondary: #f5f4fa;
   --header-border-low: #ececec;
   --product-card-border: #eeeeee;
 }
@@ -62,21 +62,39 @@ address {
 
 /* Header */
 
-.header {
+.header .container {
+  display: flex;
+
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header.no-hero {
   border-bottom: 1px solid var(--header-border-low);
 }
 
-.header > .container {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-.header > .container > ul {
+.header .container .list {
   margin: 0;
 }
 
+.main-nav,
+.site-nav,
+.header .contacts.list {
+  display: flex;
+  align-items: center;
+}
+
+.header .contacts.list {
+  margin-left: auto;
+}
+
+.site-nav .item:not(:last-child),
+.contacts .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .logo {
-  display: inline-block;
+  display: block;
 
   color: var(--secondary-text-color);
 
@@ -90,8 +108,17 @@ address {
   color: var(--accent);
 }
 
+.header .logo {
+  margin-right: 93px;
+}
+
 .site-nav .link,
 .header .contact.link {
+  display: block;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -118,7 +145,7 @@ address {
 
 .button.secondary {
   color: var(--secondary-text-color);
-  background-color: var(--bg-secondary-btn);
+  background-color: var(--bg-secondary);
 }
 
 /* Sections */
@@ -150,6 +177,8 @@ address {
 
 .hero {
   text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .hero .button.primary {
@@ -166,12 +195,23 @@ address {
   color: var(--lighter);
 
   margin-bottom: 30px;
+  width: 696px;
 
   font-weight: 900;
   font-size: 44px;
   line-height: 1.4;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.advantages .list {
+  display: flex;
+}
+
+.advantages .list .item {
+  display: block;
+  width: calc((100% - 3 * 30px) / 4);
+  margin-right: 30px;
 }
 
 .advantages .title {
@@ -191,15 +231,66 @@ address {
   line-height: 1.7;
 }
 
+.what-we-do .container {
+  padding-top: 0;
+}
+
+.what-we-do .list {
+  display: flex;
+}
+
+.what-we-do .list .item {
+  display: block;
+  width: calc((100% - 2 * 30px) / 3);
+  margin-right: 30px;
+}
+
+.what-we-do .list .item:last-child {
+  margin-right: 0;
+}
+
+.list .item > img {
+  display: block;
+}
+
+.our-team .team-cards {
+  display: flex;
+}
+
+.our-team .card.item {
+  display: block;
+  width: calc((100% - 3 * 30px) / 4);
+  margin-right: 30px;
+}
+
+.our-team .card-descr {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .team-cards .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
 }
 
 .team-cards .text {
+  margin-top: 0;
+  margin-bottom: 0;
+
   font-size: 16px;
   line-height: 1.19;
+}
+
+.team-cards .card {
+  display: block;
+  border-radius: 0px 0px 4px 4px;
+
+  background-color: var(--lighter);
 }
 
 /* Portfolio Gallery */
@@ -212,15 +303,38 @@ address {
 }
 
 .view-switch.list {
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
 }
 
+.product-type .button {
+  display: block;
+  margin-right: 8px;
+  padding: 6px 22px;
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .product-cards .card {
-  min-width: 370px;
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.product-cards .card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.product-cards .card:nth-last-child(-n + 3) {
+  margin-bottom: 0;
 }
 
 .product-cards .link {
-  display: inline-block;
+  display: block;
 
   color: inherit;
 }
@@ -259,6 +373,10 @@ address {
 .hero,
 .footer {
   background-color: var(--bg-dark);
+}
+
+.our-team {
+  background-color: var(--bg-secondary);
 }
 
 /* Footer */
