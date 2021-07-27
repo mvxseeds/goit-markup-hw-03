@@ -38,8 +38,9 @@ address {
 
 .container {
   width: 1200px;
-  padding: 94px 15px;
   margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 /* Nav */
@@ -149,6 +150,11 @@ address {
 }
 
 /* Sections */
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
 .section-title {
   margin: 0 auto 50px;
@@ -381,9 +387,8 @@ address {
 
 /* Footer */
 
-.footer > .container {
-  padding-top: 60px;
-  padding-bottom: 60px;
+.footer {
+  padding: 60px 15px 60px 15px;
 }
 
 .footer .logo {
@@ -395,14 +400,23 @@ address {
 .footer .address {
   color: var(--lighter);
 
+  margin-bottom: 9px;
+
   font-size: 14px;
   line-height: 1.7;
 }
 
-.footer .contact {
+.footer .contact.link {
   color: var(--footer-links-lighter);
+
+  display: block;
+  margin-bottom: 9px;
 
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
+}
+
+.footer .contacts > li:last-child > a {
+  margin-bottom: 0;
 }
